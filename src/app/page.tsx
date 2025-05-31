@@ -20,36 +20,7 @@ const wallets = [
   createWallet("com.trustwallet.app"),
 ];
 
-// Composant pour le bouton Historique
-const HistoryButton = () => (
-  <div style={{
-    textAlign: 'center',
-    paddingTop: '30px',
-    paddingBottom: '30px',
-  }}>
-    <Link href="/History">
-      <button style={{
-        backgroundColor: '#1e40af',
-        color: 'white',
-        padding: '10px 20px',
-        borderRadius: '8px',
-        border: 'none',
-        fontSize: '15px',
-        fontWeight: '600',
-        cursor: 'pointer',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-        transition: 'background-color 0.3s ease, transform 0.1s ease'
-      }}
-        onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#1e3a8a')}
-        onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#1e40af')}
-        onMouseDown={(e) => (e.currentTarget.style.transform = 'scale(0.98)')}
-        onMouseUp={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-      >
-        See History
-      </button>
-    </Link>
-  </div>
-);
+
 
 export default function Home() {
   const [username, setUsername] = useState('');
@@ -124,7 +95,7 @@ export default function Home() {
                 onConnect={handleWalletConnect}
                 onDisconnect={handleWalletDisconnect}
               />
-              <a href="#" className="secondary-button">Bot de chat →</a>
+              <a href="/History" className="secondary-button">Historique →</a>
             </div>
           </div>
 
@@ -165,10 +136,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Bouton Historique pour la vue connectée */}
-        <div className="bg-gray-50">
-          <HistoryButton />
-        </div>
+       
       </>
     );
   }
